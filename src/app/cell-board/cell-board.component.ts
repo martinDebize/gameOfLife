@@ -10,9 +10,24 @@ import { CellBoardService } from '../cell-board.service';
 })
 export class CellBoardComponent implements OnInit {
   cellBoard: Cell[][];
+  stopped = false;
 
   toggleCell = cell => {
     this.cellService.toggle(cell);
+  }
+
+  start = () => {
+    this.stopped = false;
+    const generator = setInterval(() => {
+      this.cellBoard = this.cellBoardService.generate(this.cellBoard);
+      if (this.stopped) {
+        clearInterval(generator);
+      }
+    }, 200);
+  }
+
+  stop = () => {
+    this.stopped = true;
   }
 
   iterate = () => {
