@@ -1,0 +1,18 @@
+<div class="main-container">
+
+  <div class="game-board">
+    <div class="cell-row" *ngFor="let cellRow of cellBoard">
+      <div class="cell-column" *ngFor="let cell of cellRow">
+        <div class="cell pointer-hover" [ngClass]="{ 'cell-activated' : cell.activated }"
+            (click)="toggleCell(cell)"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-menu">
+    <h2>Menu</h2>
+    <app-game-button width="150" height="40" title="Iterate" (click)="iterate()"></app-game-button>
+    <app-game-button width="150" height="40" title="Reset" (click)="reset()"></app-game-button>
+  </div>
+  
+</div>

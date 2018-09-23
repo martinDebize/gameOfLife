@@ -1,0 +1,41 @@
+.main-container {
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 100%;
+}
+
+.game-board {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.game-menu {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid black;
+}
+
+.cell-row {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+.cell-column {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.cell {
+    border: 1px solid black;
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.cell-activated {
+    background-color: black;
+}
